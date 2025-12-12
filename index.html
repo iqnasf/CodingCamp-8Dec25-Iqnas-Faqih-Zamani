@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>✨ My Tasks</h1>
+            <p>Stay organized, stay productive.</p>
+        </header>
+
+        <div class="input-wrapper">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="Apa yang ingin dikerjakan?">
+                <input type="date" id="date-input">
+            </div>
+            <button id="add-btn" title="Add Task">
+                <span>+ Add</span>
+            </button>
+        </div>
+
+        <div class="controls">
+            <div class="filter-wrapper">
+                <span class="filter-icon">🔍</span>
+                <select id="filter-todo">
+                    <option value="all">Semua</option>
+                    <option value="completed">Selesai</option>
+                    <option value="pending">Belum Selesai</option>
+                </select>
+            </div>
+            <button id="delete-all-btn">Clear All</button>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="40%">Task</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

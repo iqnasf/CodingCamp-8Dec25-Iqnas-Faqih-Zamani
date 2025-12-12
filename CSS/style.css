@@ -1,0 +1,284 @@
+:root {
+  --primary-color: #6366f1; /* Indigo */
+  --primary-hover: #4f46e5;
+  --accent-color: #ec4899; /* Pink */
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-light: #64748b;
+  --danger: #ef4444;
+  --success: #10b981;
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Menggunakan font baru */
+}
+
+body {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container utama dengan efek kartu putih */
+.container {
+  background-color: var(--glass-bg);
+  width: 100%;
+  max-width: 800px;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+header p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Input Section Styling */
+.input-wrapper {
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.input-group {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+}
+
+input {
+  border: none;
+  background: transparent;
+  padding: 12px;
+  font-size: 1rem;
+  color: var(--text-main);
+  outline: none;
+}
+
+#task-input {
+  flex: 2;
+  font-weight: 500;
+}
+#date-input {
+  flex: 1;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Tombol Add yang Menarik */
+#add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
+}
+
+#add-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Controls & Filter */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filter-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+select {
+  padding: 8px 12px 8px 30px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: var(--text-main);
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+#delete-all-btn {
+  background-color: #fff1f2;
+  color: var(--danger);
+  border: 1px solid #fecdd3;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#delete-all-btn:hover {
+  background-color: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
+/* Modern Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* Jarak antar baris */
+}
+
+th {
+  text-align: left;
+  color: var(--text-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 15px;
+  padding-bottom: 5px;
+}
+
+td {
+  background-color: white; /* Baris putih */
+  padding: 15px;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+/* Membulatkan sudut baris tabel pertama dan terakhir */
+tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 1px solid #f1f5f9;
+}
+tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid #f1f5f9;
+}
+
+/* Status Badges yang lebih cantik */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.status-pending {
+  background-color: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #ffedd5;
+}
+.status-completed {
+  background-color: #ecfdf5;
+  color: var(--success);
+  border: 1px solid #d1fae5;
+}
+
+/* Action Buttons */
+.action-btn {
+  border: none;
+  background: #f8fafc;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
+.action-btn.check {
+  color: #cbd5e1;
+}
+.action-btn.check:hover {
+  background-color: var(--success);
+  color: white;
+}
+
+.action-btn.delete {
+  color: #cbd5e1;
+}
+.action-btn.delete:hover {
+  background-color: var(--danger);
+  color: white;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+  .input-wrapper {
+    flex-direction: column;
+  }
+  #add-btn {
+    width: 100%;
+    padding: 10px;
+  }
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  #delete-all-btn {
+    width: 100%;
+  }
+}
